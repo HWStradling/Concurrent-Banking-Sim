@@ -1,8 +1,10 @@
 package transaction;
 
-import id_generator.TransactionIDGenerator;
+import accounts.BankAccount;
+import records.RTransaction;
 
 public abstract class Transaction {
-    CompositeTransactionKey transactionKey;
-    long transactionID;
+    RTransaction transactionRecord;
+
+    // todo transaction methods.
 }
