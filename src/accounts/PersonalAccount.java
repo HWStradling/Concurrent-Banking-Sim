@@ -1,4 +1,5 @@
 package accounts;
 
-public class PersonalAccount {
+import users.User;
+public class PersonalAccount extends BankAccount {
 }

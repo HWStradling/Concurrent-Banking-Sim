@@ -1,4 +1,4 @@
 package accounts;
 
-public class BusinessAccount {
+public class BusinessAccount extends BankAccount {
 }

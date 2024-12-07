@@ -1,4 +1,4 @@
 package accounts;
 
-public class SavingsAccount {
+public class SavingsAccount extends BankAccount {
 }
