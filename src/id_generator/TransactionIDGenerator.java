@@ -1,30 +1,36 @@
 package id_generator;
 
-import transaction.CompositeTransactionKey;
+import records.RTransaction;
+import transaction.Transaction;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class TransactionIDGenerator extends IDGenerator {
-    static final Map<Long, CompositeTransactionKey> idMap = new ConcurrentHashMap<>();
+public class TransactionIDGenerator extends IDGenerator { // done.
+    static final Map<Long, Transaction> idMap = new ConcurrentHashMap<>();
     static final AtomicLong idGenerator = new AtomicLong();
     @Override
-    protected long generateID() {
+    public long generateID() {
         return idGenerator.incrementAndGet();
     }
     @Override
-    protected boolean putID(long key, Object value) {
+    public boolean putID(long key, Object transaction) {
         try {
-            idMap.put(key,(CompositeTransactionKey) value);
+            idMap.put(key,(Transaction) transaction);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
     @Override
-    protected boolean hasID(long key) {
+    public boolean hasID(long key) {
         return idMap.containsKey(key);
+    }
+
+    @Override
+    protected Transaction getValueByID(long ID) {
+        return idMap.get(ID);
     }
 }
 
