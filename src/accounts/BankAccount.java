@@ -31,15 +31,13 @@ public abstract class BankAccount {
 
     /**
      * Thread-safe method to withdraw from balance.
-     * Should be called in a try-finally block to ensure ReentrantLock unlocking.
+     * uses a reentrant lock.
      * @param amount to be withdrawn.
-     * @param transactionalLock Reentrant lock that belongs to the account/instance
-     *                          the method is being called from, get using acquireTransactionalLock().
      * @return success boolean.
      */
-    public boolean withdraw(long amount, ReentrantLock transactionalLock) {
+    public boolean withdraw(long amount) {
+        transactionalLock.lock();
         try {
-            validateLock(transactionalLock);
             if (balance - amount > 0){
                 balance+= -amount;
                 return true;
@@ -48,59 +46,46 @@ public abstract class BankAccount {
         } catch (Exception e){
             handleTransactionExceptions(e);
             return false;
+        } finally {
+            transactionalLock.unlock();
         }
     }
 
     /**
      * Thread-safe method to deposit/add to balance.
-     * Should be called in a try-finally block to ensure ReentrantLock unlocking.
+     * uses a reentrant lock.
      * @param amount to deposit.
-     * @param transactionalLock Reentrant lock that belongs to the account/instance
-     *                          the method is being called from, get using acquireTransactionalLock().
      * @return success boolean.
      */
-    public boolean deposit(long amount, ReentrantLock transactionalLock){
+    public boolean deposit(long amount){
+        transactionalLock.lock();
         try {
-            validateLock(transactionalLock);
             balance+= amount;
             return true;
         } catch (Exception e){
             handleTransactionExceptions(e);
             return false;
+        } finally {
+            transactionalLock.unlock();
         }
     }
 
     /**
      * Thread safe method to check balance.
      * Should be called in a try-finally block to ensure ReentrantLock unlocking.
-     * @param transactionalLock Reentrant lock that belongs to the account/instance
-     *                          the method is being called from, get using acquireTransactionalLock().
      * @return account balance or 0 if exception occurs.
      */
-    public long checkBalance( ReentrantLock transactionalLock) {
+    public long checkBalance() {
+        transactionalLock.lock();
         try {
-            validateLock(transactionalLock);
             return balance;
         } catch (Exception e){
             handleTransactionExceptions(e);
             return 0;
+        } finally {
+            transactionalLock.unlock();
         }
     }
-
-    /**
-     * Ensures the lock object passed to it is held by the thread and belongs to its instance.
-     * @param transactionalLock to validate.
-     * @throws IllegalStateException if transactionLock is not held by current thread.
-     * @throws InvalidParameterException transactionLock was not acquired from this instance.
-     */
-    private void validateLock(ReentrantLock transactionalLock) throws IllegalStateException, InvalidParameterException {
-        if (transactionalLock != this.transactionalLock  ){
-           throw new InvalidParameterException(" this instances transactionLock was not acquired from this instance!!!");
-        } else if(!transactionalLock.isHeldByCurrentThread()){
-            throw new IllegalStateException(" this instances transactionLock is not held by current thread !!!");
-        }
-    }
-
     /**
      * Handles exceptions thrown/generated during transactions.
      * Todo implement transaction rollback functionality
@@ -108,7 +93,7 @@ public abstract class BankAccount {
      */
     private void handleTransactionExceptions(Exception e) {
 
-        switch (e ){ // propagates certain exceptions caused by incorrect code logic.
+        switch (e ){ // propagates certain exceptions caused by incorrect code logic. // todo change this
             case InvalidParameterException ipe -> throw ipe;
             case IllegalStateException ese -> throw ese;
             default -> System.out.println("Caught unusual exception: "+ e.getCause() + e.getMessage());
@@ -126,11 +111,10 @@ public abstract class BankAccount {
         }
         return true;
     }
-    public ReentrantLock acquireTransactionalLock() {
+    public void acquireTransactionalLock() {
         transactionalLock.lock();
-        return transactionalLock;
     }
-    public void releaseCompoundOperationLock(ReentrantLock transactionalLock) {
+    public void releaseCompoundOperationLock() {
         transactionalLock.unlock();
     }
 }
