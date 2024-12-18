@@ -4,14 +4,15 @@ import users.User;
 
 import java.security.InvalidParameterException;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
 public abstract class BankAccount {
-    private long balance; // todo make a custom class with throws to trigger rollbacks in withdraw maybe
+    private long balance;
     private long accountID;
     private User accountOwner ;
-    private ReentrantLock transactionalLock;
+    private final ReentrantLock transactionalLock = new ReentrantLock();
 
     // technically thread-safe as won't throw errors if modified while iterating through.
     private List<User> whiteList = new CopyOnWriteArrayList<>(); // efficient for few writes frequent reads.
@@ -24,8 +25,7 @@ public abstract class BankAccount {
         this.accountOwner = accountOwner;
         balance = 0;
         AccountIDGenerator idGen = new AccountIDGenerator();
-        accountID = idGen.generateID();
-        idGen.putID(accountID, this);
+        accountID = idGen.generateAndStoreID(this);
         whiteList.add(accountOwner);
     }
 
@@ -33,12 +33,12 @@ public abstract class BankAccount {
      * Thread-safe method to withdraw from balance.
      * uses a reentrant lock.
      * @param amount to be withdrawn.
-     * @return success boolean.
+     * @return true or false success boolean.
      */
     public boolean withdraw(long amount) {
         transactionalLock.lock();
         try {
-            if (balance - amount > 0){
+            if (balance - amount >= 0){
                 balance+= -amount;
                 return true;
             }
@@ -55,7 +55,7 @@ public abstract class BankAccount {
      * Thread-safe method to deposit/add to balance.
      * uses a reentrant lock.
      * @param amount to deposit.
-     * @return success boolean.
+     * @return true or false success boolean.
      */
     public boolean deposit(long amount){
         transactionalLock.lock();
@@ -69,7 +69,6 @@ public abstract class BankAccount {
             transactionalLock.unlock();
         }
     }
-
     /**
      * Thread safe method to check balance.
      * Should be called in a try-finally block to ensure ReentrantLock unlocking.
@@ -108,13 +107,17 @@ public abstract class BankAccount {
         if (!whiteList.contains(user)){
             whiteList.add(user);
             return true;
+        } else {
+            return false;
         }
-        return true;
     }
     public void acquireTransactionalLock() {
         transactionalLock.lock();
     }
     public void releaseCompoundOperationLock() {
         transactionalLock.unlock();
+    }
+    public long getAccountID() {
+        return accountID;
     }
 }

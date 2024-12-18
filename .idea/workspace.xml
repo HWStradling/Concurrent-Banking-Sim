@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce51a4d-3e82-40c1-b0d4-b95e44f14b82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/transaction/ExternalTransaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/transaction/InternalTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/accounts/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/accounts/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transaction/ExternalTransfer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transaction/InternalTransfer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/AccountFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/AccountFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/id_generator/AccountIDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/id_generator/AccountIDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/id_generator/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/id_generator/IDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/id_generator/TransactionIDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/id_generator/TransactionIDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/records/RTransaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction/ExternalTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction/ExternalTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction/ITransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction/ITransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction/InternalTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction/InternalTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction/Transaction.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -36,17 +45,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/harry/Desktop/Git Repos/Java/Concurrent-Banking-Sim&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Debug",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "development",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/harry/Desktop/Git Repos/Java/Concurrent-Banking-Sim"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="23" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Concurrent Banking Sim" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Concurrent-Banking-Sim" />
       <method v="2">
@@ -71,5 +91,21 @@
       <updated>1731544105778</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/transaction/InternalTransaction.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/static_collections/AccountCollection.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
