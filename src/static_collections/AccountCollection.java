@@ -29,6 +29,9 @@ public class AccountCollection { //
         return idMap.get(ID);
     }
 
+    public static int getCount(){
+        return idMap.size();
+    }
     public  boolean updateAccount(long key, BankAccount newValue){
         if (hasID(key)) {
             put(key, newValue);

@@ -25,6 +25,9 @@ public class TransactionCollection {
     public static boolean hasID(long key) {
         return idMap.containsKey(key);
     }
+    public static int getCount(){
+        return idMap.size();
+    }
     public static InternalTransaction getTransaction(long ID) {
         return idMap.get(ID);
 

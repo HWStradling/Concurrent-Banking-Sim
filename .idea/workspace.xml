@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce51a4d-3e82-40c1-b0d4-b95e44f14b82" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/github_javafaker.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Concurrent Banking Sim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Concurrent Banking Sim.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/accounts/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/accounts/BankAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/factories/AccountFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/AccountFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/id_generator/AccountIDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/id_generator/AccountIDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/id_generator/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/id_generator/IDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/id_generator/TransactionIDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/id_generator/TransactionIDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/records/RTransaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transaction/ExternalTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction/ExternalTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transaction/ITransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction/ITransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transaction/InternalTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction/InternalTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transaction/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/TransactionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/TransactionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static_collections/AccountCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/static_collections/AccountCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static_collections/TransactionCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/static_collections/TransactionCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction/ExternalTransaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction/ITransaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction/InternalTransaction.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +52,20 @@
   "keyToString": {
     "Application.Main.executor": "Debug",
     "Application.Unnamed.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "development",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/harry/Desktop/Git Repos/Java/Concurrent-Banking-Sim"
+    "last_opened_file_path": "C:/Users/harry/Desktop/Git Repos/Java/Concurrent-Banking-Sim",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
   <component name="RunManager">
